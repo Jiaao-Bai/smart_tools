@@ -1,0 +1,9 @@
+version: '2.4'
+
+services:
+  bitcoin:
+    image: ubuntu:22.04 
+    volumes:
+      - /code:/code
+    network_mode: host
+    command: tail -f /dev/null

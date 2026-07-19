@@ -46,8 +46,8 @@ rm -f "$ZSH_ENV"
 echo
 read -p "Proxy IP [127.0.0.1]: " proxy_ip
 proxy_ip=${proxy_ip:-127.0.0.1}
-read -p "Proxy port [8118]: " proxy_port
-proxy_port=${proxy_port:-8118}
+read -p "Proxy port [7897]: " proxy_port
+proxy_port=${proxy_port:-7897}
 read -p "ANTHROPIC_AUTH_TOKEN: " auth_token
 
 sed -e "s#{{PROXY_IP}}#$proxy_ip#g" \

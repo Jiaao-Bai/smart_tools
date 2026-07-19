@@ -7,6 +7,8 @@ fi
 # Proxy
 export http_proxy=http://{{PROXY_IP}}:{{PROXY_PORT}}
 export https_proxy=http://{{PROXY_IP}}:{{PROXY_PORT}}
+export HTTP_PROXY="$http_proxy"
+export HTTPS_PROXY="$https_proxy"
 
 # Claude (DeepSeek)
 export ANTHROPIC_BASE_URL=https://api.deepseek.com/anthropic

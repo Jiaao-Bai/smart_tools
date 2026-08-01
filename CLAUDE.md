@@ -94,7 +94,7 @@ Dockerfile 构建：
 - 配置以**软链**方式生效（`~/.config/nvim` 等指向 clone 出来的 repo）
 - 插件在构建时通过 `nvim --headless "+Lazy! install/restore"` 安装，版本由 `lazy-lock.json` 锁定
 - 可选 `--build-arg DOTFILES_REPO=... DOTFILES_REF=<分支/tag>` 覆盖来源
-- 可选代理支持：`--build-arg HTTP_PROXY=... --build-arg HTTPS_PROXY=...`
+- 可选代理支持：`--build-arg PROXY_IP=baijiaao-mac-mini.local --build-arg PROXY_PORT=7897`
 
 ### 容器内更新 dotfiles（无需重新构建镜像）
 

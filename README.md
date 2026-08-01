@@ -68,12 +68,24 @@ docker build --platform=linux/amd64 --network host \
 
 # 带代理
 docker build --platform=linux/amd64 --network host \
-  --build-arg HTTP_PROXY=http://your-proxy:port \
-  --build-arg HTTPS_PROXY=http://your-proxy:port \
+  --build-arg PROXY_IP=baijiaao-mac-mini.local \
+  --build-arg PROXY_PORT=7897 \
   -f dockerfile/Dockerfile_pytorch_nvim_claude .
 ```
 
+局域网内的 Linux 主机通过 Mac mini 的 mDNS 名称访问代理，避免把 DHCP 地址写死进构建命令。
+
 插件在镜像构建时通过 `nvim --headless "+Lazy! sync"` 安装，版本由 `lazy-lock.json` 锁定。
+
+### GPU 服务器 Ollama
+
+Mac mini 是配置事实源；启动脚本通过 SSH stdin 执行，不要求 GPU 服务器安装 Docker Compose，也不修改其 dotfiles 工作副本：
+
+```bash
+ssh gpu 'bash -s' < dockerfile/run_ollama_gpu.sh
+```
+
+脚本默认使用 `baijiaao-mac-mini.local:7897`，模型持久化在 `/mnt/storage01/ollama`，容器删除不会删除模型。
 
 ---
 

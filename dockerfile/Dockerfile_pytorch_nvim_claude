@@ -19,7 +19,7 @@
 #
 # 构建（带代理 + Claude 配置）：
 #   docker build --platform=linux/amd64 --network host \
-#     --build-arg PROXY_IP=192.168.31.19 \
+#     --build-arg PROXY_IP=baijiaao-mac-mini.local \
 #     --build-arg PROXY_PORT=7897 \
 #     --build-arg ANTHROPIC_AUTH_TOKEN=your_token \
 #     -f dockerfile/Dockerfile_pytorch_nvim_claude .
